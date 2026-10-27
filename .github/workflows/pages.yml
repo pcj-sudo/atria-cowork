@@ -22,6 +22,8 @@ jobs:
           gh release download preview-20261027 --repo "${{ github.repository }}" --pattern "site.zip" --dir bundle
           mkdir _site
           unzip -q bundle/site.zip -d _site
+      - name: Exclude local upload tooling
+        run: rm -f _site/media-import.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
