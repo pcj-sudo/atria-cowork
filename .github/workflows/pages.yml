@@ -19,7 +19,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download preview-20261027 --repo "${{ github.repository }}" --pattern "site.zip" --dir bundle
+          gh release download preview-20261028 --repo "${{ github.repository }}" --pattern "site.zip" --dir bundle
           mkdir _site
           unzip -q bundle/site.zip -d _site
       - name: Exclude local upload tooling
